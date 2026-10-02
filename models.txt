@@ -1,0 +1,33 @@
+# One router model per line. The AES key is MD5("<MODEL>@" . KEY_BASE).
+# Blank lines and lines starting with # are ignored. Order matters:
+# detection tries them top-to-bottom and stops at the first match.
+WBR3000UAX
+WR3000U-256MB
+WR3000S
+WR3000P
+WR3000H
+WR3000E
+WR3000
+TR3000
+TR3000-256MB
+SP30W
+AP1300
+AP3000
+C200P
+LT300
+LT400
+LT500
+LT700
+M1200
+M1300
+M1800
+M3000
+R700
+RE1200
+RE1800
+RE3000
+TR30
+TR3600
+WR1300
+WR2100
+X6

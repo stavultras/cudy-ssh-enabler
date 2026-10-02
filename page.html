@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cudy SSH Enabler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+	<div class="brand">
+		<span class="tldot r"></span><span class="tldot y"></span><span class="tldot g"></span>
+		<h1><b>root@cudy</b>: ~/ssh-enabler — zsh</h1>
+		<span class="badge">80×24</span>
+	</div>
+
+	<div class="card">
+		<p class="motd">cudy ssh enabler <b>v1</b> · model auto-detect<br>supported models: <b>{{MODELS}}</b><br>select a backup — the model is detected, then enter the ssh password and hit <b>run</b>.</p>
+		<hr class="rule">
+
+		<form id="form" autocomplete="off">
+			<p class="pl"><span class="p">root@cudy</span>:<span class="p2">~</span># ./enable-ssh <span class="cm">--backup</span> \</p>
+			<div class="field">
+				<label for="binfile">&nbsp;&nbsp;<span class="k">&gt;</span> backup file <span class="k">(.bin, AES-encrypted)</span></label>
+				<div class="drop" id="drop">
+					<input type="file" id="binfile" name="binfile" accept=".bin,application/octet-stream" required>
+					<div class="prompt">
+						<div class="big">drag &amp; drop or <b>click to browse</b>…</div>
+					</div>
+					<div class="fname" id="fname"></div>
+				</div>
+			</div>
+
+			<div id="pwstep" class="step-hidden">
+				<p class="pl"><span class="cm">--password</span> \</p>
+				<div class="field">
+					<label for="pass">&nbsp;&nbsp;<span class="k">&gt;</span> ssh root password <span class="k">(NEWPASS)</span></label>
+					<div class="pwwrap">
+						<input type="password" id="pass" name="pass" placeholder="enter ssh password to set" autocomplete="new-password">
+						<button type="button" class="eye" id="eye" aria-label="Show password"></button>
+					</div>
+				</div>
+				<button class="btn" type="button" id="go"><span class="spin"></span><span class="lbl">▶ run</span></button>
+			</div>
+		</form>
+	</div>
+
+	<div class="card out-card" id="outcard" style="display:none">
+		<div class="tbar"><span id="prompt"><span class="p">root@cudy</span>:~# ./enable-ssh</span></div>
+		<div class="tbody" id="tbody"></div>
+		<div class="dlrow" id="dlrow" style="display:none"></div>
+	</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

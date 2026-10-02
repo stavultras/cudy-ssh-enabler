@@ -1,0 +1,5 @@
+# Never commit router backups. they contain your device's config/secrets
+*.bin
+
+# Never commit the real firmware secret
+.env
